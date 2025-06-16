@@ -30,6 +30,9 @@ export const newsApi = createApi({
     getUsers: builder.query<User[], void>({
       query: () => "/users",
     }),
+    getUserById: builder.query<User, number>({
+      query: (id) => `/users/${id}`,
+    }),
     getPostById: builder.query<Post, number>({
       query: (id) => `/posts/${id}`,
     }),
@@ -41,5 +44,6 @@ export const {
   useGetNewsByIdQuery,
   useGetPostsQuery,
   useGetUsersQuery,
+  useGetUserByIdQuery,
   useGetPostByIdQuery,
 } = newsApi;

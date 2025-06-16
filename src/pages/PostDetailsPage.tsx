@@ -2,16 +2,17 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import {
   useGetPostByIdQuery,
-  useGetUsersQuery,
+  useGetUserByIdQuery,
 } from "../features/news/newsApi";
 import { useTranslation } from "react-i18next";
 import ImageWithFallback from "../components/ImageWithFallback";
 
 const PostDetailsPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id, userid } = useParams<{ id: string; userid: string }>();
   const postId = parseInt(id || "0");
+  const userId = parseInt(userid || "0");
   const { data: post, isLoading, isError } = useGetPostByIdQuery(postId);
-  const { data: users } = useGetUsersQuery();
+  const { data: user } = useGetUserByIdQuery(userId);
   const { t } = useTranslation();
 
   if (isLoading) {
@@ -22,8 +23,6 @@ const PostDetailsPage: React.FC = () => {
     return <div>Error: Post not found</div>;
   }
 
-  const author =
-    users?.find((user) => user.id === post.userId)?.name || "Unknown";
   const placeholderImage = ""; // for future we can use placeholder image
   return (
     <div className="max-w-4xl mx-auto p-4">
@@ -38,7 +37,7 @@ const PostDetailsPage: React.FC = () => {
         {post.body}
       </p>
       <p className="text-gray-600 dark:text-gray-400">
-        {t("author")}: {author}
+        {t("author")}: {user?.name}
       </p>
     </div>
   );

@@ -17,7 +17,6 @@ interface NewsItemProps {
 
 const NewsItem: React.FC<NewsItemProps> = ({ post, author }) => {
   const { t } = useTranslation();
-  //   const placeholderImage = process.env.REACT_APP_PLACEHOLDER_IMAGE || "";
   const placeholderImage = "";
 
   return (
@@ -37,7 +36,7 @@ const NewsItem: React.FC<NewsItemProps> = ({ post, author }) => {
           {t("author")}: {author}
         </p>
         <Link
-          to={`/post/${post.id}`}
+          to={`/post/${post.id}/${post.userId}`}
           className="inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300"
         >
           {t("read_more")}

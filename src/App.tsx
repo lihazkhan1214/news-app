@@ -48,7 +48,7 @@ function AppContent() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/post/:id" element={<PostDetailsPage />} />
+          <Route path="/post/:id/:userid" element={<PostDetailsPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
