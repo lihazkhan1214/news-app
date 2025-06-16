@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #333333;
+  --border-primary: #e2e8f0;
+}
+
+.dark {
+  --bg-primary: #1a202c;
+  --text-primary: #f7fafc;
+  --border-primary: #2d3748;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+html[dir="rtl"] {
+  direction: rtl;
+}
