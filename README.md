@@ -67,12 +67,12 @@ news-app/
 │   │   ├── news/        # News API integration
 │   │   └── theme/       # Theme management
 │   ├── pages/           # Page components
-│   └── types/           # TypeScript type definitions
+│            
 ├── public/              # Static assets
 └── package.json         # Project dependencies
 ```
 
-## Available Scripts
+## Available Scripts 
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
@@ -103,7 +103,7 @@ news-app/
 - Responsive grid layout
 - Loading states and error handling
 
-## Contributing
+## Contributing Optional
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -111,6 +111,3 @@ news-app/
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
